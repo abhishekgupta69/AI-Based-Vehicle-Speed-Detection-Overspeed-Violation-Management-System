@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to your Lovable project
 
 ## Project info
@@ -71,3 +72,7 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+=======
+# AI-Based-Vehicle-Speed-Detection-Overspeed-Violation-Management-System
+Real-time AI-based vehicle speed detection and overspeed violation management using computer vision and full-stack web technologies.
+>>>>>>> 79eec1481e02035fae13a6f805b22cf6f68ced1a
