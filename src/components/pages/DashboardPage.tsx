@@ -2,17 +2,21 @@ import { StatCard } from '@/components/dashboard/StatCard';
 import { TrafficChart, VehicleTypeChart, WeeklyViolationsChart } from '@/components/dashboard/Charts';
 import { LiveMonitor } from '@/components/dashboard/LiveMonitor';
 import { ViolationsTable } from '@/components/dashboard/ViolationsTable';
-import { mockStats } from '@/data/mockData';
+import { useLiveSimulation } from '@/hooks/useLiveSimulation';
 import { Car, AlertTriangle, Gauge, MapPin } from 'lucide-react';
 
 export function DashboardPage() {
+  const { stats } = useLiveSimulation();
+
   return (
+
     <div className="space-y-6">
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <StatCard
           title="Total Vehicles Today"
-          value={mockStats.totalVehicles.toLocaleString()}
+          value={stats.totalVehicles.toLocaleString()}
+
           change={8.2}
           icon={Car}
           iconColor="text-primary"
@@ -20,22 +24,25 @@ export function DashboardPage() {
         />
         <StatCard
           title="Violations Today"
-          value={mockStats.violationsToday}
-          change={mockStats.violationsChange}
+          value={stats.violationsToday}
+          change={stats.violationsChange}
+
           icon={AlertTriangle}
           iconColor="text-destructive"
           delay={50}
         />
         <StatCard
           title="Average Speed"
-          value={`${mockStats.avgSpeed} km/h`}
+          value={`${stats.avgSpeed} km/h`}
+
           icon={Gauge}
           iconColor="text-warning"
           delay={100}
         />
         <StatCard
           title="Active Zones"
-          value={mockStats.activeZones}
+          value={stats.activeZones}
+
           icon={MapPin}
           iconColor="text-success"
           delay={150}
