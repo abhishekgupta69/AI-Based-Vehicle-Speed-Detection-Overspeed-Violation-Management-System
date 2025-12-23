@@ -7,8 +7,6 @@ interface DashboardLayoutProps {
   children: React.ReactNode;
   currentPage: string;
   onNavigate: (page: string) => void;
-  title: string;
-  subtitle?: string;
 }
 
 const pageInfo: Record<string, { title: string; subtitle: string }> = {
