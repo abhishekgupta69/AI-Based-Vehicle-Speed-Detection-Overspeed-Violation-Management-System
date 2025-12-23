@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
-import { cn } from '@/lib/utils';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -32,11 +31,15 @@ export function DashboardLayout({ children, currentPage, onNavigate }: Dashboard
         <div className="grid-pattern absolute inset-0 opacity-30" />
       </div>
 
-      <Sidebar currentPage={currentPage} onNavigate={onNavigate} />
-      
-      <main className="ml-64 min-h-screen relative">
+      {/* Sidebar (desktop only) */}
+      <div className="hidden md:block">
+        <Sidebar currentPage={currentPage} onNavigate={onNavigate} />
+      </div>
+
+      {/* Main content */}
+      <main className="md:ml-64 min-h-screen relative">
         <Header title={info.title} subtitle={info.subtitle} />
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           {children}
         </div>
       </main>
